@@ -1,0 +1,30 @@
+# 密钥 / 凭据（真实 .env 绝不入库；示例 .env.example 保留）
+.env
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# 大模型缓存（HuggingFace，GB 级，含符号链接）
+models/
+*.cache/
+
+# 运行时数据与日志
+output/
+jobs/
+videos/
+creds/
+backups/
+*.log
+workstation.log
+
+# 字体（部署时用 fetch_fonts.sh 获取，不入库）
+fonts/
+
+# 系统
+.DS_Store
+Thumbs.db
