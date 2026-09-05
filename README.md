@@ -1,11 +1,11 @@
-# 🎬 DramaLocalizer — AI Film & TV Localization Workbench
+# 🎬 Cutly-DramaLocalizer — AI Film & TV Localization Workbench
 
 <p align="center">
   <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/文档-中文-blue?style=for-the-badge" alt="中文文档"></a>
   <a href="README.md"><img src="https://img.shields.io/badge/Docs-English-blue?style=for-the-badge" alt="English Docs"></a>
 </p>
 
-> Turn raw video into a dubbed, subtitled, social-ready localization package — entirely on **your own server**. Upload a clip and DramaLocalizer runs speech recognition, human-in-the-loop subtitle editing, LLM translation, neural TTS dubbing, vocal isolation and FFmpeg composition end-to-end.
+> Turn raw video into a dubbed, subtitled, social-ready localization package — entirely on **your own server**. Upload a clip and Cutly-DramaLocalizer runs speech recognition, human-in-the-loop subtitle editing, LLM translation, neural TTS dubbing, vocal isolation and FFmpeg composition end-to-end.
 
 <p align="center">
   <img src="https://img.shields.io/badge/platform-Linux%20(Ubuntu%20server)-blue" alt="Platform">
@@ -18,7 +18,7 @@
 
 ---
 
-## 🌟 Why DramaLocalizer?
+## 🌟 Why Cutly-DramaLocalizer?
 
 - **🎯 One pipeline, zero glue code** — upload → recognize → translate → dub → isolate → compose → download, all from a single web UI.
 - **🏠 Self-hosted & private** — every heavy model (Whisper, Demucs) runs locally; only the translation and TTS calls leave your network. Your media never touches a third party.
@@ -81,7 +81,7 @@
 ## 📂 Project Structure
 
 ```
-DramaLocalizer/
+Cutly-DramaLocalizer/
 ├── install.sh              # one-shot installer: systemd unit + fonts + autostart
 ├── 说明.md                 # full architecture / deploy / migration guide (Chinese)
 ├── README.md               # this file (English)
@@ -133,8 +133,8 @@ sudo apt update
 sudo apt install -y python3 python3-venv python3-pip ffmpeg curl fontconfig \
   ca-certificates build-essential libsndfile1 rsync
 
-git clone https://github.com/Juzer7113/DramaLocalizer.git
-cd DramaLocalizer
+git clone https://github.com/Juzer7113/Cutly-DramaLocalizer.git
+cd Cutly-DramaLocalizer
 sudo bash install.sh          # creates the systemd unit, installs fonts, enables boot
 ```
 
@@ -150,7 +150,7 @@ See [说明.md](说明.md) for the full walkthrough (server requirements, swap, 
 sudo rsync -a --delete \
   --exclude models --exclude .git --exclude .env --exclude venv \
   --exclude output --exclude backups --exclude workstation.log \
-  /path/to/DramaLocalizer/ /www/wwwroot/aidj/drama_localizer/
+  /path/to/Cutly-DramaLocalizer/ /www/wwwroot/aidj/drama_localizer/
 # 3. python venv + pip install -r requirements.txt
 # 4. cp .env.example .env  and fill in keys
 # 5. register fonts, create drama_localizer.service, systemctl enable --now
@@ -225,4 +225,4 @@ Internal use. This repository is published for source management and self-hostin
 
 ## ☕ Like it?
 
-If DramaLocalizer saves you time, give it a ⭐, open a PR, or share it with someone localizing video. Feedback and bug reports are always welcome.
+If Cutly-DramaLocalizer saves you time, give it a ⭐, open a PR, or share it with someone localizing video. Feedback and bug reports are always welcome.

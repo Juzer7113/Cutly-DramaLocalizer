@@ -1,11 +1,11 @@
-# 🎬 DramaLocalizer — AI 影视本地化工作台
+# 🎬 Cutly-DramaLocalizer — AI 影视本地化工作台
 
 <p align="center">
   <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/文档-中文-blue?style=for-the-badge" alt="中文文档"></a>
   <a href="README.md"><img src="https://img.shields.io/badge/Docs-English-blue?style=for-the-badge" alt="English Docs"></a>
 </p>
 
-> 把原始视频变成「配音 + 字幕 + 可直接发社交媒体」的本地化成品——**全程跑在你自己的服务器上**。上传一段片子，DramaLocalizer 自动完成语音识别、人工精修字幕、LLM 翻译、神经网络 TTS 配音、人声分离和 FFmpeg 合成。
+> 把原始视频变成「配音 + 字幕 + 可直接发社交媒体」的本地化成品——**全程跑在你自己的服务器上**。上传一段片子，Cutly-DramaLocalizer 自动完成语音识别、人工精修字幕、LLM 翻译、神经网络 TTS 配音、人声分离和 FFmpeg 合成。
 
 <p align="center">
   <img src="https://img.shields.io/badge/platform-Linux%20(Ubuntu%20server)-blue" alt="运行平台">
@@ -18,7 +18,7 @@
 
 ---
 
-## 🌟 为什么用 DramaLocalizer？
+## 🌟 为什么用 Cutly-DramaLocalizer？
 
 - **🎯 一条流水线，零胶水代码** —— 上传 → 识别 → 翻译 → 配音 → 去人声 → 合成 → 下载，全部在一个网页里完成。
 - **🏠 自托管、数据私有** —— Whisper、Demucs 等重模型全部本地运行，只有翻译和 TTS 调用会出网；你的视频素材不经过任何第三方。
@@ -81,7 +81,7 @@
 ## 📂 目录结构
 
 ```
-DramaLocalizer/
+Cutly-DramaLocalizer/
 ├── install.sh              # 一键安装：生成 systemd 单元 + 安装字体 + 开机启动
 ├── 说明.md                 # 完整架构 / 部署 / 迁移说明（中文）
 ├── README.md               # 英文说明（本文件为对照）
@@ -133,8 +133,8 @@ sudo apt update
 sudo apt install -y python3 python3-venv python3-pip ffmpeg curl fontconfig \
   ca-certificates build-essential libsndfile1 rsync
 
-git clone https://github.com/Juzer7113/DramaLocalizer.git
-cd DramaLocalizer
+git clone https://github.com/Juzer7113/Cutly-DramaLocalizer.git
+cd Cutly-DramaLocalizer
 sudo bash install.sh          # 生成 systemd 单元、安装字体、设置开机启动
 ```
 
@@ -150,7 +150,7 @@ sudo bash install.sh          # 生成 systemd 单元、安装字体、设置开
 sudo rsync -a --delete \
   --exclude models --exclude .git --exclude .env --exclude venv \
   --exclude output --exclude backups --exclude workstation.log \
-  /path/to/DramaLocalizer/ /www/wwwroot/aidj/drama_localizer/
+  /path/to/Cutly-DramaLocalizer/ /www/wwwroot/aidj/drama_localizer/
 # 3. 建 python venv 并 pip install -r requirements.txt
 # 4. cp .env.example .env 并填好密钥
 # 5. 注册字体、建 drama_localizer.service、systemctl enable --now
@@ -225,4 +225,4 @@ python deploy_d.py
 
 ## ☕ 喜欢就支持一下
 
-如果 DramaLocalizer 帮你省了时间，点个 ⭐、提个 PR，或分享给做视频本地化的朋友。欢迎反馈和报 bug。
+如果 Cutly-DramaLocalizer 帮你省了时间，点个 ⭐、提个 PR，或分享给做视频本地化的朋友。欢迎反馈和报 bug。
